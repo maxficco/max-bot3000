@@ -3,6 +3,7 @@ from discord.ext import commands
 from config import *
 import time
 import asyncio
+import random
 
 maxbot = commands.Bot(command_prefix = ["."])
 
@@ -14,8 +15,7 @@ async def on_ready():
 async def on_member_join(member):
     channel = maxbot.get_channel(746945651568410706)
     print(f"{member} joined")
-    casual = member[:-4]
-    await member.send(f"Welcome aboard, {casual}! Hope you make some friends!")
+    await member.send(f"Welcome aboard, {member}! Hope you make some friends!")
     await channel.send(f"Yay! {member} just joined. Everyone say hi!")
 @maxbot.event
 async def on_member_remove(member):
@@ -36,5 +36,28 @@ async def checkmyping(ctx):
         await ctx.send(f"{userping}. Your ping is OK, may experience some Lag. 👍")
     elif  ping >= 200:
         await ctx.send(f"{userping}. Lol, your internet sucks. 😂")
-
+@maxbot.command(aliases=["8ball, 719219"])
+async def _8ball(ctx, *, question):
+    responses = [
+        "It is certain.",
+        "Without a doubt.",
+        "Yes - definitely.",
+        "You may rely on it.",
+        "As I see it, yes.",
+        "Most likely.",
+        "Outlook good.",
+        "Yes.",
+        "Signs point to yes.",
+        "Reply hazy, try again.",
+        "Ask again later.",
+        "Better not tell you now.",
+        "Cannot predict now.",
+        "Concentrate and ask again.",
+        "Don't count on it.",
+        "My reply is no.",
+        "My sources say no.",
+        "Outlook not so good.",
+        "Very doubtful."
+    ]
+    await ctz.send(f"Question: {question}\nAnswer: {random.choice(responses)}")
 maxbot.run(api_secret)
