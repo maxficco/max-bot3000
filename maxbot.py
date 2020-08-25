@@ -1,6 +1,8 @@
 import discord
 from discord.ext import commands
 from config import *
+import time
+import asyncio
 
 maxbot = commands.Bot(command_prefix = ["."])
 
@@ -9,13 +11,17 @@ async def on_ready():
     print("bot is ready")
 
 @maxbot.event
-async def on_member_join(member, ctx):
-    print(f"{member} has joined the server! :)")
-    await ctx.send(f"Welcome, {member}! Hope you make some friends!")
+async def on_member_join(member):
+    channel = maxbot.get_channel(746945651568410706)
+    print(f"{member} joined")
+    casual = member[:-4]
+    await member.send(f"Welcome aboard, {casual}! Hope you make some friends!")
+    await channel.send(f"Yay! {member} just joined. Everyone say hi!")
 @maxbot.event
-async def on_member_remove(member, ctx):
-    print(f"{member} has left the sever. :(")
-    await ctx.send(f"{member} left. We hope we can see you later!")
+async def on_member_remove(member):
+    channel = maxbot.get_channel(746945651568410706)
+    print(f"{member} left")
+    await channel.send(f"{member} has left the sever 😞")
 @maxbot.command()
 async def checkmyping(ctx):
     ping = round(maxbot.latency * 1000)
