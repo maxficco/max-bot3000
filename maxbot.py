@@ -2,20 +2,20 @@ import discord
 from discord.ext import commands
 from config import *
 
-maxbot = commands.Bot(command_prefix = [".", "hey maxbot " ])
+maxbot = commands.Bot(command_prefix = ["."])
 
 @maxbot.event
 async def on_ready():
     print("bot is ready")
 
 @maxbot.event
-async def on_member_join(member):
+async def on_member_join(member, ctx):
     print(f"{member} has joined the server! :)")
-
+    await ctx.send(f"Welcome, {member}! Hope you make some friends!")
 @maxbot.event
-async def on_member_remove(member):
+async def on_member_remove(member, ctx):
     print(f"{member} has left the sever. :(")
-
+    await ctx.send(f"{member} left. We hope we can see you later!")
 @maxbot.command()
 async def checkmyping(ctx):
     ping = round(maxbot.latency * 1000)
