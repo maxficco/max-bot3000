@@ -36,8 +36,8 @@ async def checkmyping(ctx):
         await ctx.send(f"{userping}. Your ping is OK, may experience some Lag. 👍")
     elif  ping >= 200:
         await ctx.send(f"{userping}. Lol, your internet sucks. 😂")
-@maxbot.command(aliases=["8ball, 719219"])
-async def _8ball(ctx, *, question):
+@maxbot.command()
+async def crystalball(ctx, *, question):
     responses = [
         "It is certain.",
         "Without a doubt.",
@@ -60,4 +60,11 @@ async def _8ball(ctx, *, question):
         "Very doubtful."
     ]
     await ctx.send(f"Question: {question}\nAnswer: {random.choice(responses)}")
+@maxbot.command()
+async def kick(ctx, member : discord.Member, *, reason=None):
+    await member.kick(reason=reason)
+@maxbot.command()
+async def ban(ctx, member : discord.Member, *, reason=None):
+    await member.ban(reason=reason)
+
 maxbot.run(api_secret)
