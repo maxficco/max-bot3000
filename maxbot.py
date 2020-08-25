@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-from config.py import *
+from config import *
 
 maxbot = commands.Bot(command_prefix = [".", "hey maxbot " ])
 
@@ -30,5 +30,5 @@ async def checkmyping(ctx):
         await ctx.send(f"{userping}. Your ping is OK, may experience some Lag. 👍")
     elif  ping >= 200:
         await ctx.send(f"{userping}. Lol, your internet sucks. 😂")
-        
+
 maxbot.run(api_secret)
