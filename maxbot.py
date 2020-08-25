@@ -29,4 +29,5 @@ async def checkmyping(ctx):
         await ctx.send(f"{userping}. Your ping is OK, may experience some Lag. 👍")
     elif  ping >= 200:
         await ctx.send(f"{userping}. Lol, your internet sucks. 😂")
-maxbot.run('NzQ2OTUyMjQzNDgzMjQ2NjQ0.X0HzfA.6D7fyYerflAZHyk19WlO6MKclys')
+        
+maxbot.run('hahahaha you thought u could find me ;)')
