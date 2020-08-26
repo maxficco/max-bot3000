@@ -10,7 +10,7 @@ maxbot = commands.Bot(command_prefix = ["."])
 @maxbot.event
 async def on_ready():
     print("bot is ready")
-
+    await maxbot.change_presence(activity=discord.Game(name="MaxBot goes Beep Boop"))
 @maxbot.event
 async def on_member_join(member):
     channel = maxbot.get_channel(746945651568410706)
@@ -60,11 +60,21 @@ async def crystalball(ctx, *, question):
         "Very doubtful."
     ]
     await ctx.send(f"Question: {question}\nAnswer: {random.choice(responses)}")
+
+@maxbot.command()
+async def hi(ctx):
+    await ctx.send(f'Hi There! I am the Max Bot 3000! I hope you are doing well.\nYou can find out more by typing, ".help"')
 @maxbot.command()
 async def kick(ctx, member : discord.Member, *, reason=None):
     await member.kick(reason=reason)
 @maxbot.command()
 async def ban(ctx, member : discord.Member, *, reason=None):
     await member.ban(reason=reason)
+
+
+@maxbot.event
+async def on_command_error(ctx, error):
+    if isinstance(error, commands.MissingRequiredArgument):
+        await ctx.send("Please enter in all required arguments, following the command.")
 
 maxbot.run(api_secret)
