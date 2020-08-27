@@ -76,5 +76,6 @@ async def ban(ctx, member : discord.Member, *, reason=None):
 async def on_command_error(ctx, error):
     if isinstance(error, commands.MissingRequiredArgument):
         await ctx.send("Please enter in all required arguments, following the command.")
-
+    if isinstance(error, commands.CommandNotFound):
+        await ctx.send("Hey, I can't do that command!")
 maxbot.run(api_secret)
