@@ -69,7 +69,7 @@ async def hi(ctx):
     await ctx.send(f'Hi there, {str(ctx.author)[:-5]}! I am the Max Bot 3000!\nYou can learn more by typing, ".help"')
 @maxbot.command()
 async def hello(ctx):
-    await ctx.send(f'Hi there, {str(ctx.author)[:-5]}! I am the Max Bot 3000!\nYou can learn more by typing, ".help"')
+    await ctx.send(f'Hello there, {str(ctx.author)[:-5]}! I am the Max Bot 3000!\nYou can learn more by typing, ".help"')
 @maxbot.command()
 async def kick(ctx, member : discord.Member, *, reason=None):
     await member.kick(reason=reason)
@@ -119,5 +119,6 @@ async def on_command_error(ctx, error):
         await ctx.send("Please enter in all required arguments, following the command.")
     if isinstance(error, commands.CommandNotFound):
         await ctx.send("Hey, I can't do that command!")
+
 
 maxbot.run(api_secret)
