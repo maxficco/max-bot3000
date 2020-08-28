@@ -8,4 +8,5 @@ start commands with a period ("."), then type:<br>
     →   "hi" / "hello"  -  Get a warm greeting from the Max Bot 3000!<br>
     →   "help"  -  Generate a list of commands.<br>
     →   "kick" / "ban"  -  Yup, you can kick people or ban them from you server!<br>
+    →   "msg"  -  Use Max Bot to message people in your server!<br>
     →   "users"  -  Tells you # of people online/offline<br>

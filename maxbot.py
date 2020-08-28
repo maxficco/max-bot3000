@@ -94,6 +94,10 @@ Users Online: {online}
 Users Offline: {offline}```""")
 
 @maxbot.command()
+async def msg(ctx, member:discord.Member, *, themessage):
+    await member.send(f"From {ctx.message.author}:  {themessage}")
+
+@maxbot.command()
 async def help(ctx):
     embed = discord.Embed(
         color = discord.Color.orange()
@@ -105,6 +109,7 @@ async def help(ctx):
     embed.add_field(name = ".crystalball", value = "Just ask a question and it will tell the future!\nex: .crystalball Should I go to Bed?")
     embed.add_field(name = ".kick", value = "Kicks @user out of the server!\nex: .kick @mficco for being rude")
     embed.add_field(name = ".ban", value = "Bans @user from the server!\nex: .ban @mficco for bullying people")
+    embed.add_field(name = ".msg", value = "Sends a message to a user!\nex: .msg @mficco Hey, What's Up?")
     embed.add_field(name = ".help", value = "shows this page!")
     await ctx.send(embed = embed)
 
