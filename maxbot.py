@@ -67,7 +67,9 @@ async def crystalball(ctx, *, question):
 @maxbot.command()
 async def hi(ctx):
     await ctx.send(f'Hi there, {str(ctx.author)[:-5]}! I am the Max Bot 3000!\nYou can learn more by typing, ".help"')
-
+@maxbot.command()
+async def hello(ctx):
+    await ctx.send(f'Hi there, {str(ctx.author)[:-5]}! I am the Max Bot 3000!\nYou can learn more by typing, ".help"')
 @maxbot.command()
 async def kick(ctx, member : discord.Member, *, reason=None):
     await member.kick(reason=reason)
@@ -97,7 +99,7 @@ async def help(ctx):
         color = discord.Color.orange()
     )
     embed.set_author(name = "Help is on the Way!")
-    embed.add_field(name = ".hi", value = "Get a friendly greeting from the Max Bot!")
+    embed.add_field(name = ".hi or .hello", value = "Get a friendly greeting from the Max Bot!")
     embed.add_field(name = ".ping", value = "Returns your Ping in ms!")
     embed.add_field(name = ".users", value = "Lists # of users online & offline!")
     embed.add_field(name = ".crystalball", value = "Just ask a question and it will tell the future!\nex: .crystalball Should I go to Bed?")
