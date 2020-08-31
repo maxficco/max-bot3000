@@ -122,3 +122,4 @@ async def on_command_error(ctx, error):
 
 
 maxbot.run(api_secret)
+maxbot.run("api_secret")
