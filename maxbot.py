@@ -122,4 +122,4 @@ async def on_command_error(ctx, error):
         await ctx.send("Hey, I can't do that command!")
 
 
-maxbot.run(api_secret)
+maxbot.run("NzQ2OTUyMjQzNDgzMjQ2NjQ0.X0HzfA.PfgLY9Y-yWMUVi5aqrahKrXtMAc")
