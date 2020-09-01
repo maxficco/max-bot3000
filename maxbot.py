@@ -4,9 +4,6 @@ from config import *
 import time
 import asyncio
 import random
-import os
-from boto.s3.connection import S3Connection
-s3 = S3Connection(os.environ['TOP_SECRET'])
 
 maxbot = commands.Bot(command_prefix = ["."])
 maxbot.remove_command("help")
@@ -123,4 +120,4 @@ async def on_command_error(ctx, error):
     if isinstance(error, commands.CommandNotFound):
         await ctx.send("Hey, I can't do that command!")
 
-maxbot.run(s3)
+maxbot.run("NzQ2OTUyMjQzNDgzMjQ2NjQ0.X0HzfA.8z_cByjflAX_8yVKLm7rueYjnic")
