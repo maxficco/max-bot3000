@@ -12,7 +12,7 @@ maxbot.remove_command("help")
 @maxbot.event
 async def on_ready():
     print("bot is ready")
-    await maxbot.change_presence(activity=discord.Game(name="MaxBot goes Beep Boop"))
+    await maxbot.change_presence(activity=discord.Game(name="Running on Heroku!"))
 @maxbot.event
 async def on_member_join(member):
     channel_id = maxbot.get_channel(746945651568410706)
