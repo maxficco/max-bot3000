@@ -4,8 +4,9 @@ from config import *
 import time
 import asyncio
 import random
+import os
 from boto.s3.connection import S3Connection
-s3 = S3Connection(os.environ['S3_KEY'], os.environ['S3_SECRET'])
+s3 = S3Connection(os.environ['TOP_SECRET'])
 
 maxbot = commands.Bot(command_prefix = ["."])
 maxbot.remove_command("help")
