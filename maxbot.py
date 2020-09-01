@@ -123,4 +123,4 @@ async def on_command_error(ctx, error):
     if isinstance(error, commands.CommandNotFound):
         await ctx.send("Hey, I can't do that command!")
 
-maxbot.run(TOP_SECRET)
+maxbot.run(s3)
