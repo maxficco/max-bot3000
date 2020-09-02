@@ -6,7 +6,7 @@ import asyncio
 import random
 import os
 token = os.environ.get('TOP_SECRET')
-print("token")
+print(token)
 maxbot = commands.Bot(command_prefix = ["."])
 maxbot.remove_command("help")
 
